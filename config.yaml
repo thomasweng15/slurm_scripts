@@ -1,0 +1,18 @@
+template_file: "template.sh"
+
+slurm:
+        exclude_compute: "[7,9,11]"
+        singularity_img: /home/tweng/containers/%s_%s.img 
+        singularity_script: /usr/src/corl-grasping/tools/training/train_%s.py
+        log_file: /home/tweng/experiments/logs/%s.txt
+        # gpu: 0
+
+job_params:
+        modality: "rgb"
+        loss: "mse"
+        num_rotations: 4
+        dataset_dir: /scratch/share/corlgrasping/data_rot_%d
+        log_dir: /home/tweng/experiments/logs
+        batch_size: 50
+        learning_rate: 1.0e-7
+        aug_ratio: 0.5
