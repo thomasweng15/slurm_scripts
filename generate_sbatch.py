@@ -2,7 +2,6 @@
 
 import yaml
 import argparse
-import numpy as np
 
 class ScriptGenerator:
 	def __init__(self, args):
